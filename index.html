@@ -16,13 +16,14 @@
 
     <!-- * Code -->
 
-    <!-- <script defer>
+    <script defer>
 
       window.addEventListener("load", () => {
         const video = document.getElementById("intro-video");
+        video.attributes.setNamedItem("class", 'fixed')
         video.play();
       });
-    </script> -->
+    </script>
 
 
     <style>
@@ -30,6 +31,10 @@
       video {
         background-color: orange;
         width: 100%;
+      }
+
+      .fixed {
+        position: fixed;
       }
     </style>
   </head>
