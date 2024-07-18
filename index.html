@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- * Code -->
+    <script defer>
+      function supportsHEVCAlpha() {
+        const navigator = window.navigator;
+        const ua = navigator.userAgent.toLowerCase();
+        const hasMediaCapabilities = !!(
+          navigator.mediaCapabilities &&
+          navigator.mediaCapabilities.decodingInfo
+        );
+        const isSafari =
+          ua.indexOf("safari") != -1 &&
+          !(ua.indexOf("chrome") != -1) &&
+          ua.indexOf("version/") != -1;
+        return isSafari && hasMediaCapabilities;
+      }
+
+      window.addEventListener("load", () => {
+        const video = document.getElementById("intro-video");
+        video.src = supportsHEVCAlpha()
+          ? "https://res.cloudinary.com/dsrgiuyvs/video/upload/v1721274187/output_be48ce.mov"
+          : "https://res.cloudinary.com/dsrgiuyvs/video/upload/v1721274078/output_jxni4t.webm";
+        video.play();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <section>
+      <video width="100%" muted playsinline id="intro-video">
+        Your browser does not support HTML5 video.
+      </video>
+    </section>
+  </body>
+</html>
