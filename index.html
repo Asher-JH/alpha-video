@@ -16,18 +16,27 @@
 
     <!-- * Code -->
 
+    <script defer>
+
+      window.addEventListener("load", () => {
+        const video = document.getElementById("intro-video");
+        video.play();
+      });
+    </script>
+
 
     <style>
       /* * Orange to know that the alpha is working */
       video {
         background-color: orange;
+        width: 100%;
       }
     </style>
   </head>
   <body>
     <h1>Hello World</h1>
     <section>
-      <video style="width:100%" autoplay muted id="intro-video">
+      <video autoplay muted id="intro-video">
         <source src="https://res.cloudinary.com/dsrgiuyvs/video/upload/v1721274187/output_be48ce.mov" type="video/mov" />
         <source src="https://res.cloudinary.com/dsrgiuyvs/video/upload/v1721274078/output_jxni4t.webm" type="video/webm" />
         Your browser does not support HTML5 video.
